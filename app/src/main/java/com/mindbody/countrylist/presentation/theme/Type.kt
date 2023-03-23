@@ -1,4 +1,4 @@
-package com.mindbody.countrylist.ui.theme
+package com.mindbody.countrylist.presentation.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

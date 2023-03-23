@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -56,6 +58,14 @@ dependencies {
     implementation(Libraries.lifecycleRuntimeKtx)
     implementation(Libraries.activityCompose)
 
+    //Hilt
+    implementation(Libraries.hilt)
+    kapt(Libraries.hiltCompiler)
+
+    // Navigation
+    implementation(Libraries.navigationCompose)
+    implementation(Libraries.hiltNavigationCompose)
+
     testImplementation(TestLibraries.junit4)
     androidTestImplementation(TestLibraries.testExtJunit)
     androidTestImplementation(TestLibraries.espresso)
@@ -63,4 +73,9 @@ dependencies {
 
     debugImplementation(Libraries.composeUiTooling)
     debugImplementation(Libraries.composeUiTestMainFest)
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

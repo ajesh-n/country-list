@@ -5,9 +5,19 @@ object AndroidSdk {
 }
 
 object Versions {
+    const val androidGradlePlugin = "7.4.2"
+    const val kotlinStdlib = "1.8.0"
+
     const val ktx = "1.7.0"
     const val lifecycleRuntimeKtx = "2.3.1"
     const val composeVersion = "1.4.0"
+
+    // Hilt
+    const val hiltVersion: String = "2.44"
+
+    // Navigation
+    const val navigationComposeVersion: String = "2.5.3"
+    const val hiltNavigationComposeVersion: String = "1.0.0"
 
     // Test
     const val junit4 = "4.13.2"
@@ -27,6 +37,17 @@ object Libraries {
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.composeVersion}"
     const val composeUiTestMainFest =
         "androidx.compose.ui:ui-test-manifest:${Versions.composeVersion}"
+
+    // Hilt
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hiltVersion}"
+    const val hiltCompiler = "com.google.dagger:hilt-compiler:${Versions.hiltVersion}"
+
+    // Navigation
+    const val navigationCompose =
+        "androidx.navigation:navigation-compose:${Versions.navigationComposeVersion}"
+    const val hiltNavigationCompose =
+        "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationComposeVersion}"
+
 }
 
 object TestLibraries {
