@@ -74,6 +74,8 @@ dependencies {
     implementation(Libraries.coilCompose)
 
     testImplementation(TestLibraries.junit4)
+    testImplementation(TestLibraries.mockK)
+    testImplementation(TestLibraries.coroutineTest)
     androidTestImplementation(TestLibraries.testExtJunit)
     androidTestImplementation(TestLibraries.espresso)
     androidTestImplementation(TestLibraries.composeUiTest)

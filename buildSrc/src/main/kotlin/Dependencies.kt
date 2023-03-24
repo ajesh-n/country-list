@@ -25,10 +25,14 @@ object Versions {
     // Coil
     const val coil = "2.2.2"
 
+    // Coroutines
+    const val coroutines = "1.6.4"
+
     // Test
     const val junit4 = "4.13.2"
     const val androidXJunit = "1.1.5"
     const val espresso = "3.5.1"
+    const val mockkVersion = "1.13.4"
 }
 
 object Libraries {
@@ -68,4 +72,6 @@ object TestLibraries {
     const val testExtJunit = "androidx.test.ext:junit:${Versions.androidXJunit}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     const val composeUiTest = "androidx.compose.ui:ui-test-junit4:${Versions.composeVersion}"
+    const val mockK = "io.mockk:mockk:${Versions.mockkVersion}"
+    const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
 }
