@@ -12,7 +12,7 @@ import org.junit.Rule
 import org.junit.Test
 
 @OptIn(ExperimentalCoroutinesApi::class)
-internal class CountryListViewModelTest {
+class CountryListViewModelTest {
 
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()

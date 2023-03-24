@@ -4,9 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mindbody.countrylist.data.model.Province
 import com.mindbody.countrylist.domain.usecases.GetProvincesByCountryUseCase
+import com.mindbody.countrylist.presentation.AppDispatchers
+import com.mindbody.countrylist.presentation.Dispatcher
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,7 +17,8 @@ import kotlinx.coroutines.withContext
 
 @HiltViewModel
 class CountryDetailsViewModel @Inject constructor(
-    private val getProvincesByCountryUseCase: GetProvincesByCountryUseCase
+    private val getProvincesByCountryUseCase: GetProvincesByCountryUseCase,
+    @Dispatcher(AppDispatchers.IO) private val ioDispatcher: CoroutineDispatcher
 ) : ViewModel() {
     private val _uiState: MutableStateFlow<CountryDetailsUiState> =
         MutableStateFlow(CountryDetailsUiState.Loading)
@@ -23,7 +26,7 @@ class CountryDetailsViewModel @Inject constructor(
 
     fun fetchProvinces(countryCode: String) {
         viewModelScope.launch {
-            withContext(Dispatchers.IO) {
+            withContext(ioDispatcher) {
                 getProvincesByCountryUseCase.getProvinces(countryCode)
                     .onSuccess {
                         _uiState.emit(CountryDetailsUiState.Success(it))
