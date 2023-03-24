@@ -27,10 +27,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.mindbody.countrylist.R
 import com.mindbody.countrylist.data.model.Province
 import com.mindbody.countrylist.presentation.theme.CountryListTheme
 import com.mindbody.countrylist.presentation.viewmodels.CountryDetailsUiState
@@ -50,7 +52,7 @@ fun CountryDetails(
     Column {
         TopAppBar(
             title = {
-                Text(text = "Country Provinces")
+                Text(text = stringResource(R.string.country_provinces))
             },
             backgroundColor = MaterialTheme.colors.primary,
             navigationIcon = {
@@ -74,7 +76,7 @@ fun CountryDetails(
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "Loading provinces...")
+                    Text(text = stringResource(R.string.loading_provinces))
                     Spacer(modifier = Modifier.width(16.dp))
                     CircularProgressIndicator()
                 }
@@ -130,7 +132,7 @@ fun ProvinceCard(
             )
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = "Short code: ${province.shortCode}",
+                text = "${stringResource(R.string.short_code)}  ${province.shortCode}",
                 color = MaterialTheme.colors.secondaryVariant,
                 style = MaterialTheme.typography.subtitle2,
             )

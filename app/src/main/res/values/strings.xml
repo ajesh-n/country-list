@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Country List</string>
     <string name="countries">Countries</string>
+    <string name="country_provinces">Country Provinces</string>
+    <string name="loading_provinces">Loading provinces…</string>
+    <string name="short_code">Short code:</string>
 </resources>
