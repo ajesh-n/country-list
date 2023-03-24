@@ -19,6 +19,12 @@ object Versions {
     const val navigationComposeVersion: String = "2.5.3"
     const val hiltNavigationComposeVersion: String = "1.0.0"
 
+    // Retrofit
+    const val retrofitVersion = "2.9.0"
+
+    // Coil
+    const val coil = "2.2.2"
+
     // Test
     const val junit4 = "4.13.2"
     const val androidXJunit = "1.1.5"
@@ -48,6 +54,13 @@ object Libraries {
     const val hiltNavigationCompose =
         "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationComposeVersion}"
 
+    // Retrofit
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
+    const val retrofitGsonConverter =
+        "com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}"
+
+    // Coil
+    const val coilCompose = "io.coil-kt:coil-compose:${Versions.coil}"
 }
 
 object TestLibraries {

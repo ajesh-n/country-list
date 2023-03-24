@@ -19,14 +19,16 @@ fun AppNavigation() {
         }
 
         composable(
-            AppScreens.CountryDetailsScreen.name + "/{countryId}",
-            arguments = listOf(navArgument(name = "countryId") {
-                type = NavType.IntType
-                defaultValue = -1
-            })
+            route = AppScreens.CountryDetailsScreen.name + "/{countryCode}",
+            arguments = listOf(
+                navArgument(name = "countryCode") {
+                    type = NavType.StringType
+                    defaultValue = ""
+                }
+            )
         ) {
-            val countryId = it.arguments?.getInt("countryId")
-            CountryDetails(navController, countryId)
+            val countryCode = it.arguments?.getString("countryCode")
+            CountryDetails(navController, countryCode)
         }
     }
 }

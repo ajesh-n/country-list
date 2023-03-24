@@ -66,6 +66,13 @@ dependencies {
     implementation(Libraries.navigationCompose)
     implementation(Libraries.hiltNavigationCompose)
 
+    // Retrofit
+    implementation(Libraries.retrofit)
+    implementation(Libraries.retrofitGsonConverter)
+
+    // Coil
+    implementation(Libraries.coilCompose)
+
     testImplementation(TestLibraries.junit4)
     androidTestImplementation(TestLibraries.testExtJunit)
     androidTestImplementation(TestLibraries.espresso)
