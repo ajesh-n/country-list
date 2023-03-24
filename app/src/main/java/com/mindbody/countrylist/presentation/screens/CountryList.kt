@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -25,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -114,13 +114,14 @@ fun CountryCard(
                 .fillMaxSize()
         ) {
             AsyncImage(
-                model = "https://flagcdn.com/48x36/${country.code}.png",
+                model = country.flagUrl,
                 placeholder = painterResource(id = R.drawable.ic_image),
                 contentDescription = "country flag",
                 error = painterResource(id = R.drawable.ic_image),
                 modifier = Modifier
                     .width(140.dp)
-                    .fillMaxHeight(),
+                    .height(94.dp),
+                contentScale = ContentScale.FillBounds
             )
             Spacer(modifier = Modifier.width(16.dp))
             Column(
