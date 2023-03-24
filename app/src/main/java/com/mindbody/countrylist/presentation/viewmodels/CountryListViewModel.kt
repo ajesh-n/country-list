@@ -32,7 +32,7 @@ class CountryListViewModel @Inject constructor(
                     .onSuccess {
                         _uiState.emit(CountryListUiState.Success(it))
                     }.onFailure {
-                        _uiState.emit(CountryListUiState.Error)
+                        _uiState.emit(CountryListUiState.Error(it.localizedMessage))
                     }
             }
         }
@@ -41,6 +41,6 @@ class CountryListViewModel @Inject constructor(
 
 sealed interface CountryListUiState {
     object Loading : CountryListUiState
-    object Error : CountryListUiState
+    data class Error(val message: String?) : CountryListUiState
     data class Success(val countries: List<CountryEntity>) : CountryListUiState
 }

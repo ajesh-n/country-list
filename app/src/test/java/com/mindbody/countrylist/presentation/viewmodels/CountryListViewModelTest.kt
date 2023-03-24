@@ -37,14 +37,14 @@ class CountryListViewModelTest {
     fun `should show error when failure`() {
         runTest {
             // Given
-            coEvery { getCountriesUseCase.getCountries() } returns Result.failure(Exception())
+            coEvery { getCountriesUseCase.getCountries() } returns Result.failure(Exception(""))
 
             // When
             countryListViewModel =
                 CountryListViewModel(getCountriesUseCase, mainDispatcherRule.testDispatcher)
 
             // Then
-            assertEquals(CountryListUiState.Error, countryListViewModel.uiState.value)
+            assertEquals(CountryListUiState.Error(""), countryListViewModel.uiState.value)
         }
     }
 

@@ -68,7 +68,7 @@ fun CountryList(
                 LoadingScreen(loadingText = stringResource(R.string.loading_countries))
             }
             is CountryListUiState.Error -> {
-                ErrorScreen(stringResource(R.string.error_message))
+                ErrorScreen(state.message ?: stringResource(R.string.error_message))
             }
         }
     }
