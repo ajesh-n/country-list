@@ -1,7 +1,6 @@
 package com.mindbody.countrylist.presentation.screens
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -16,7 +15,6 @@ import androidx.compose.foundation.layout.windowInsetsBottomHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -67,30 +65,10 @@ fun CountryList(
                 }
             }
             is CountryListUiState.Loading -> {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(text = stringResource(R.string.loading_countries))
-                    Spacer(modifier = Modifier.width(16.dp))
-                    CircularProgressIndicator()
-                }
+                LoadingScreen(loadingText = stringResource(R.string.loading_countries))
             }
             is CountryListUiState.Error -> {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(16.dp),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = stringResource(R.string.error_message),
-                        style = MaterialTheme.typography.h6,
-                        color = MaterialTheme.colors.error
-                    )
-                }
+                ErrorScreen(stringResource(R.string.error_message))
             }
         }
     }
