@@ -72,7 +72,7 @@ fun CountryList(
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = "Loading countries...")
+                    Text(text = stringResource(R.string.loading_countries))
                     Spacer(modifier = Modifier.width(16.dp))
                     CircularProgressIndicator()
                 }
@@ -86,7 +86,7 @@ fun CountryList(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "Oops!! something went wrong, Please try again",
+                        text = stringResource(R.string.error_message),
                         style = MaterialTheme.typography.h6,
                         color = MaterialTheme.colors.error
                     )
@@ -135,13 +135,13 @@ fun CountryCard(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = "Country code : ${country.code}",
+                    text = "${stringResource(id = R.string.country_code)} : ${country.code}",
                     color = MaterialTheme.colors.secondaryVariant,
                     style = MaterialTheme.typography.subtitle2,
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Tel code : ${country.phoneCode}",
+                    text = "${stringResource(id = R.string.tel_code)} ${country.phoneCode}",
                     color = MaterialTheme.colors.secondaryVariant,
                     style = MaterialTheme.typography.subtitle2,
                 )

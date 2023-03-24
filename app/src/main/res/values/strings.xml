@@ -4,4 +4,8 @@
     <string name="country_provinces">Country Provinces</string>
     <string name="loading_provinces">Loading provinces…</string>
     <string name="short_code">Short code:</string>
+    <string name="country_code">Country code:</string>
+    <string name="tel_code">Tel code:</string>
+    <string name="loading_countries">Loading countries…</string>
+    <string name="error_message">Oops!! something went wrong, Please try again</string>
 </resources>
